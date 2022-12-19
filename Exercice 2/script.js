@@ -20,6 +20,7 @@ function agify(e) {
     fetch("https://api.agify.io/?name=" + firstname + "&country_id=" + country)
         .then((response) => response.text())
         .then((text) => {
+            localStorage.setItem(firstname,text);
             let newDiv = document.createElement('div');
             newDiv.textContent = text;
             document.body.appendChild(newDiv);
